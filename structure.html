@@ -1,0 +1,49 @@
+<!-- First of all we have to create a module called shared -->
+
+the structure is ::
+
+<!-- the start of the shared module -->
+shared ( module ) => 
+
+    components ( a folder contain all necessary components ) =>
+        
+        Header ( a component in a folder called Header ) 
+
+
+    shared ( a service called shared in a folder called services contain all services in our app )    
+
+<!-- the end of the shared module -->
+
+
+<!-- the start of the products module -->
+
+
+products ( module ) =>
+
+    components ( a folder called all-components inside it all-products component )
+
+    services  ( a folder called services inside it all necessary services )
+
+
+<!-- the end of the products module -->    
+
+
+<!-- the start of the carts module -->
+
+
+carts ( module ) =>
+
+    components ( a folder called components inside it carts component )
+
+    services  ( a folder called services inside it all necessary services )
+
+
+<!-- the end of the products module -->    
+
+<!-- كما لاحظنا نستخدم لكل جزء في المشروع موديول خاص به لتسهيل الفهم وسرعة الوصول للملفات -->
+
+<!-- we have to import all modules in the app module to make it works -->
+
+<!-- and after that export all necessary files ( components / services /pipes ... )
+     to make it puplic to the whole project
+-->

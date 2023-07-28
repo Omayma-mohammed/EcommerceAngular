@@ -1,0 +1,53 @@
+<div class="cartBox">
+    <h1 class="text-danger ps-3">Shopping Cart</h1>
+    <div class="headCart">
+        <p class="lead">You have <label class="text-danger">{{cartProducts.length}}</label> item in your cart</p>
+        <button  (click)="clearCart()" class="btn btn-danger">Clear Shopping Cart</button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Price</th>
+                <th class="text-center" style="width: 25%;">Quantity</th>
+                <th class="text-center">Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let values of cartProducts; let index = index" #all>
+                <td><img src="{{values.item.image}}" alt=""></td>
+                <td>{{values.item.title}}</td>
+                <td>{{values.item.price}} L.E</td>
+                <td>
+                    <div class="quantity">
+                        <button class="btn btn-dark" (click)="plusSign(index)">+</button>
+                        <input type="number" class="form-control" (change)="detectChanges() == values.quantity" [(ngModel)]="values.quantity"  min="1">
+                        <button [disabled]="values.item.price * values.quantity <= 0" class="btn btn-dark" (click)="minusSign(index)">-</button>
+                    </div>
+                </td>
+                <td>{{values.item.price.toPrecision(3) * values.quantity.toPrecision(3)}} L.E</td>
+                <td>
+                    <button  (click)="deleteProduct(index)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Total : {{total}} L.E</th>
+                <th>
+                    <button (click)="addNewCart()" class="btn btn-success">Order Now</button>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div  *ngIf="success" class="alert alert-success" role="alert"><strong>Well Done!</strong> Your Order is Successfully Send</div>
+<div class="text-center" *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>

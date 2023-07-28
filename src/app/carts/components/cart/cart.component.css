@@ -1,0 +1,55 @@
+.cartBox {
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 2 20px;
+    margin: 50px 0;
+}
+
+.table .quantity {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table .quantity input {
+    margin: 0 20px;
+}
+
+tbody {
+    border-top: 1px solid #c61d21;
+    border-bottom: 1px solid #c61d21;
+}
+
+tr  td {
+    border-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr  td img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+tbody input {
+    text-align: center;
+}
+
+.headCart {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.headCart button {
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.headCart span:hover {
+    color: white !important;
+    box-shadow: 0px 5px 10px rgba(black, black, black, .3);
+}
